@@ -22,13 +22,16 @@ public class Projectile : MonoBehaviour
         transform.localRotation = Quaternion.Euler(0, 0, 0);
         lifetime += Time.deltaTime;
         if (lifetime > bombTimer) 
-            anim.SetTrigger("explode");
+            OnBomb();
+           // anim.SetTrigger("explode");
             //gameObject.SetActive(false);
     }
     private void OnBomb()
     {
         boxCollider.enabled = true;
         anim.SetTrigger("explode");
+        
+
     }
     public void SetDirection(float _direction)
     {
@@ -44,9 +47,16 @@ public class Projectile : MonoBehaviour
         transform.localScale = new Vector3(localScaleX, transform.localScale.y, transform.localScale.z);
        
     }
-
     private void Deactivate()
     {
         gameObject.SetActive(false);
     }
+
+     private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "Ground")
+            collision.GetComponent<Health>().TakeDamage(1);
+            Debug.Log("Hit Player");
+    }
+    
 }

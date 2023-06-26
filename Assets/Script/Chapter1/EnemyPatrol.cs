@@ -1,51 +1,80 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyPatrol : MonoBehaviour
 {
-     [SerializeField]public GameObject PointA;
-     [SerializeField]public GameObject PointB;
-    private Rigidbody2D rb;
-    private Animator anim;
-    private Transform currentPoint;
-     [SerializeField]public float speed;
-     private int RotationZ = 0;
+    [Header ("Patrol Points")]
+    [SerializeField] private Transform leftEdge;
+    [SerializeField] private Transform rightEdge;
 
-    // Start is called before the first frame update
-    void Start()
+    [Header("Enemy")]
+    [SerializeField] private Transform enemy;
+
+    [Header("Movement parameters")]
+    [SerializeField] private float speed;
+    private Vector3 initScale;
+    private bool movingLeft;
+
+    [Header("Idle Behaviour")]
+    [SerializeField] private float idleDuration;
+    private float idleTimer;
+
+    [Header("Enemy Animator")]
+    [SerializeField] private Animator anim;
+
+    private void Awake()
     {
-        rb = GetComponent<Rigidbody2D>();
-        anim = GetComponent<Animator>();
-        currentPoint = PointB.transform;
-        anim.SetBool("isRunning",true);
+        initScale = enemy.localScale;
+    }
+    private void OnDisable()
+    {
+        anim.SetBool("moving", false);
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        transform.localRotation = Quaternion.Euler(0, 0, RotationZ);
-       
-        Vector2 point = currentPoint.position - transform.position;
-        if(currentPoint == PointB.transform)
+        enemy.localRotation = Quaternion.Euler(0, 0, 0);
+        if (movingLeft)
         {
-            rb.velocity = new Vector2(speed, 0);
-            transform.localScale = new Vector3(-1,1,1);
+            if (enemy.position.x >= leftEdge.position.x)
+            {
+                MoveInDirection(-1);
+                enemy.localScale = new Vector3(2,2,2);
+            }
+            else
+                DirectionChange();
         }
         else
         {
-            rb.velocity = new Vector2(-speed,0);
-            transform.localScale = new Vector3(1,1,1);
+            if (enemy.position.x <= rightEdge.position.x)
+            {
+                MoveInDirection(1);
+                enemy.localScale = new Vector3(-2,2,2);
+            }
+            else
+                DirectionChange();
         }
-        if(Vector2.Distance(transform.position, currentPoint.position) < 1.5f && currentPoint == PointB.transform)
-        {
-            currentPoint = PointA.transform;
-           
-        }
-        if(Vector2.Distance(transform.position, currentPoint.position) < 1.5f && currentPoint == PointA.transform)
-        {
-            currentPoint = PointB.transform;
-        }
-        
+    }
+
+    private void DirectionChange()
+    {
+        anim.SetBool("moving", false);
+        idleTimer += Time.deltaTime;
+
+        if(idleTimer > idleDuration)
+            movingLeft = !movingLeft;
+    }
+
+    private void MoveInDirection(int _direction)
+    {
+        idleTimer = 0;
+        anim.SetBool("moving", true);
+
+        //Make enemy face direction
+        enemy.localScale = new Vector3(Mathf.Abs(initScale.x) * _direction,
+            initScale.y, initScale.z);
+
+        //Move in that direction
+        enemy.position = new Vector3(enemy.position.x + Time.deltaTime * _direction * speed,
+            enemy.position.y, enemy.position.z);
     }
 }

@@ -9,6 +9,7 @@ public class PlayerAttack : MonoBehaviour
     private Animator anim;
     private PlayerMovement playerMovement;
     private float cooldownTimer = Mathf.Infinity;
+    private bool[] bombs_status = {false,false,false};
 
     private void Awake()
     {
@@ -18,14 +19,13 @@ public class PlayerAttack : MonoBehaviour
 
     private void Update()
     {
-        if ((Input.GetKey(KeyCode.X) || XCI.GetButton(XboxButton.A)) && cooldownTimer > attackCooldown && playerMovement.canAttack())
+        if ((Input.GetKey(KeyCode.X) || XCI.GetButton(XboxButton.A)) && cooldownTimer > attackCooldown )
             Attack();
-        cooldownTimer += Time.deltaTime;
+             cooldownTimer += Time.deltaTime;
     }
 
     private void Attack()
     {
-        
         cooldownTimer = 3;
         bombs[0].transform.position = bombPoint.position;
         bombs[0].GetComponent<Projectile>().SetDirection(Mathf.Sign(transform.localScale.x));

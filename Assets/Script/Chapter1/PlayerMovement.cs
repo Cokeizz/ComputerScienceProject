@@ -14,6 +14,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]private float speed = 1.5f;
     [SerializeField]private float jump_range = 3.75f;
 
+
     private void Awake() {
 
         // Grab reference from object (Rigidbody and Anomator)
@@ -27,14 +28,13 @@ public class PlayerMovement : MonoBehaviour
     }
 
     private void Update() {
+      
     
         transform.localRotation = Quaternion.Euler(0, 0, 0);
 
         horizontalInput = Input.GetAxis("Horizontal");
         verticalInput = Input.GetAxis("Vertical");
 
-
-       
         body.velocity = new Vector2(horizontalInput * speed,body.velocity.y);
         
         //Flip Player
@@ -44,7 +44,7 @@ public class PlayerMovement : MonoBehaviour
             transform.localScale = new Vector3(-2,2,2);
             
       //Jump
-        if((Input.GetKey(KeyCode.Space) && Grounded==true) || (XCI.GetButton(XboxButton.Y) && Grounded))
+        if((Input.GetKey(KeyCode.Space) && Grounded==true) || (XCI.GetButton(XboxButton.Y) && Grounded==true))
             Jump();
        
         //Set animator parameter
@@ -58,18 +58,10 @@ public class PlayerMovement : MonoBehaviour
         body.velocity = new Vector2(body.velocity.x,jump_range);
         anim.SetTrigger("Jump");
         Grounded = false; 
-        anim.SetBool("Fall",true);
+      
     }
     private void OnCollisionEnter2D(Collision2D collision) 
     {
         if(collision.gameObject.tag == "Ground")
-            Grounded = true;
-
-    }
-     public bool canAttack()
-    {
-        return true;
-    }
-
-  
-}
+           Grounded = true;
+}}

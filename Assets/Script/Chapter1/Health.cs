@@ -21,11 +21,11 @@ public class Health : MonoBehaviour
 
         if (currentHealth > 0)
         {
-           anim.SetTrigger("hurt");
+           //anim.SetTrigger("hurt");
         }
         else
         {
-            anim.SetTrigger("die");
+           // anim.SetTrigger("die");
         }
     }
     private void Update() {
