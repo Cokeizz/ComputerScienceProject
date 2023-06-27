@@ -21,16 +21,24 @@ public class Health : MonoBehaviour
 
         if (currentHealth > 0)
         {
-           //anim.SetTrigger("hurt");
+            anim.SetTrigger("hurt");
+           Debug.Log("hurt");
         }
         else
         {
-           // anim.SetTrigger("die");
+           anim.SetTrigger("die");
+           Debug.Log("die");
+           
         }
     }
     private void Update() {
         if (Input.GetKeyDown(KeyCode.E))
             TakeDamage(1);
+    }
+
+    private void Deactivate()
+    {
+        gameObject.SetActive(false);
     }
    
 }

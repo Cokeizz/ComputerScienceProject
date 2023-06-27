@@ -52078,7 +52078,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!95 &1169685470
 Animator:
   serializedVersion: 5
@@ -52159,7 +52159,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1169685469}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.0744705, y: 0.6731535, z: 9.914889}
+  m_LocalPosition: {x: -25.664, y: -3.146, z: 9.914889}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -52226,6 +52226,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bombTimer: 2
+  attackCooldown: 1
+  damage: 1
+  range: 2
+  colliderDistance: 0
+  boxCollider: {fileID: 1169685473}
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 192
 --- !u!1 &1179666355
 GameObject:
   m_ObjectHideFlags: 0
@@ -52669,8 +52677,8 @@ GameObject:
   - component: {fileID: 1466114552}
   - component: {fileID: 1466114551}
   - component: {fileID: 1466114550}
-  - component: {fileID: 1466114555}
   - component: {fileID: 1466114556}
+  - component: {fileID: 1466114557}
   m_Layer: 7
   m_Name: CucumberEnemy
   m_TagString: Enemy
@@ -52805,26 +52813,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1466114549}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.30865097, y: -0.24347758, z: 0.02911437}
+  m_LocalPosition: {x: -2.78, y: -0.51, z: 0.02911437}
   m_LocalScale: {x: -2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2007584056}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1466114555
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1466114549}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: db9269b0dd389054ca8f89b78752b4d2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  startingHealth: 3
 --- !u!114 &1466114556
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -52845,6 +52840,19 @@ MonoBehaviour:
   playerLayer:
     serializedVersion: 2
     m_Bits: 64
+--- !u!114 &1466114557
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1466114549}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db9269b0dd389054ca8f89b78752b4d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingHealth: 2
 --- !u!1 &1488933391
 GameObject:
   m_ObjectHideFlags: 0
@@ -67715,7 +67723,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1624417091}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 34.37, y: -1.81, z: 0}
+  m_LocalPosition: {x: 53.18, y: 0.97, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 1
   m_Children:

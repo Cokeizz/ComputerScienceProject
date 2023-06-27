@@ -52,6 +52,7 @@ public class CucumberEnemy : MonoBehaviour
         if(hit.collider != null)
             playerHealth = hit.transform.GetComponent<Health>();
 
+         
         return hit.collider != null;
     }
     private void OnDrawGizmos() {
