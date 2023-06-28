@@ -17,10 +17,10 @@ public class Projectile : MonoBehaviour
     [SerializeField] private float range;
     [SerializeField] private float colliderDistance;
     [SerializeField]private BoxCollider2D boxCollider;
-    [SerializeField]private LayerMask playerLayer;
+    [SerializeField]private LayerMask objectLayer;
    // private float cooldownTimer = Mathf.Infinity;
 
-    private Health playerHealth;
+    private Health objectHealth;
    
     private void Awake()
     {
@@ -72,10 +72,10 @@ public class Projectile : MonoBehaviour
     {
         RaycastHit2D hit = Physics2D.BoxCast(boxCollider.bounds.center+transform.right*range*transform.localScale.x*colliderDistance,
             new Vector3(boxCollider.bounds.size.x * range, boxCollider.bounds.size.y, boxCollider.bounds.size.z),
-            0, Vector2.left,0,playerLayer);
+            0, Vector2.left,0,objectLayer);
 
         if(hit.collider != null)
-            playerHealth = hit.transform.GetComponent<Health>();
+            objectHealth = hit.transform.GetComponent<Health>();
         return hit.collider != null;
     }
     private void OnDrawGizmos() {
@@ -90,8 +90,8 @@ public class Projectile : MonoBehaviour
             if(EnemyInSight())
             {
                  Debug.Log("IN");
-                playerHealth.TakeDamage(damage);
-                Debug.Log(playerHealth.currentHealth);
+                objectHealth.TakeDamage(damage);
+                Debug.Log(objectHealth.currentHealth);
             }
     }
 

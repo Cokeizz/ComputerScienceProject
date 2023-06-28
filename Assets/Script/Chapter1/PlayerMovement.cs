@@ -60,8 +60,16 @@ public class PlayerMovement : MonoBehaviour
         Grounded = false; 
       
     }
+
+    private void OnGround()
+    {
+        Grounded = true; 
+      
+    }
     private void OnCollisionEnter2D(Collision2D collision) 
     {
         if(collision.gameObject.tag == "Ground")
-           Grounded = true;
+        {
+            Grounded = true;
+        }      
 }}

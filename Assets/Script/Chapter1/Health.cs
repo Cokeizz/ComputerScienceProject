@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class Health : MonoBehaviour
 {
+    private Rigidbody2D body;
     [SerializeField] private float startingHealth;
     public float currentHealth { get; private set; }
     private Animator anim;
@@ -12,6 +13,7 @@ public class Health : MonoBehaviour
     {
         currentHealth = startingHealth;
         anim = GetComponent<Animator>();
+        body = GetComponent<Rigidbody2D>();
 
        
     }
@@ -39,6 +41,11 @@ public class Health : MonoBehaviour
     private void Deactivate()
     {
         gameObject.SetActive(false);
+    }
+
+    private void gotAttack()
+    {
+        body.velocity = new Vector2(8,15);
     }
    
 }
