@@ -10,6 +10,7 @@ public class CoinController : MonoBehaviour
     [SerializeField]private BoxCollider2D boxCollider;
     [SerializeField]private LayerMask objectLayer;
     private Animator anim;
+ 
     // Start is called before the first frame update
     void Start()
     {
@@ -46,6 +47,7 @@ public class CoinController : MonoBehaviour
             {
                 gameObject.SetActive(false);
                 Debug.Log("+1 coin"); 
+                CoinCounter.instance.IncreaseCoins();
             }
     }
 
