@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CameraController : MonoBehaviour
 {
@@ -16,6 +17,12 @@ public class CameraController : MonoBehaviour
     [SerializeField]private float aboveDistance;
     private float lookAhead;
     private float lookDown;
+    private string sceneName;
+
+    private void Start(){
+        Scene currentScene = SceneManager.GetActiveScene ();
+        sceneName = currentScene.name;
+    }
     
     private void Update() {
        
@@ -25,6 +32,7 @@ public class CameraController : MonoBehaviour
          lookDown = Mathf.Lerp(lookDown, (aboveDistance * player.localScale.y), Time.deltaTime * cameraSpeed);
         transform.position = new Vector3(player.position.x + lookAhead,cameraVertical+lookDown, transform.position.z);
 
+    if(sceneName == "SampleScene"){
         if(player.position.x<=100.0f)
             aboveDistance = 0.0f;
 
@@ -39,15 +47,15 @@ public class CameraController : MonoBehaviour
         
         if(player.position.x>=375.0f && player.position.x<=402.0f)
             aboveDistance = -1.0f;
+    }
+    if(sceneName == "Chapter2"){
+        if(player.position.y<=4.0f)
+            aboveDistance = 0.0f;
 
-        
-            
-           
+        if(player.position.y>=4.00f)
+            aboveDistance = 4.0f;
+    }
 
-        
-
-
-  
 
     }
 
