@@ -16615,7 +16615,7 @@ Transform:
   m_GameObject: {fileID: 1624417091}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 79.1, y: -2, z: 0}
+  m_LocalPosition: {x: 197.4, y: -2, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -16853,7 +16853,7 @@ Transform:
   m_GameObject: {fileID: 1636248898}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 97.58, y: 5.38, z: 0}
+  m_LocalPosition: {x: 200.86, y: -1.78, z: 0}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -18628,6 +18628,7 @@ GameObject:
   - component: {fileID: 1939017106}
   - component: {fileID: 1939017105}
   - component: {fileID: 1939017109}
+  - component: {fileID: 1939017110}
   m_Layer: 9
   m_Name: Chest
   m_TagString: Untagged
@@ -18780,14 +18781,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3289a50853bd43d193ec66e62c976f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1939017110
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1939017104}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63f86ca63c08642d9a058a60a2ba938a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chestCoin: {fileID: 772067739}
   range: 3
   colliderDistance: 0
   boxCollider: {fileID: 1939017105}
   objectLayer:
+    serializedVersion: 2
     m_Bits: 4096
-  ChestCoin: {fileID: 772067739}
-  checker: 1
-  anim: {fileID: 0}
 --- !u!1001 &1961587342
 PrefabInstance:
   m_ObjectHideFlags: 0
