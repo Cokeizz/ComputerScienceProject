@@ -85467,6 +85467,7 @@ MonoBehaviour:
   speed: 8
   idleDuration: 1
   anim: {fileID: 1054312231}
+  enemyScale: 2
 --- !u!4 &1558223252
 Transform:
   m_ObjectHideFlags: 0
@@ -86627,7 +86628,7 @@ Transform:
   m_GameObject: {fileID: 1624417091}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2, z: 0}
+  m_LocalPosition: {x: 55.66, y: 2.39, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -88922,6 +88923,7 @@ MonoBehaviour:
   speed: 20
   idleDuration: 1
   anim: {fileID: 383286507}
+  enemyScale: 2
 --- !u!4 &1740398224
 Transform:
   m_ObjectHideFlags: 0
@@ -90893,6 +90895,7 @@ MonoBehaviour:
   speed: 20
   idleDuration: 1
   anim: {fileID: 591389412}
+  enemyScale: 2
 --- !u!4 &1855692348
 Transform:
   m_ObjectHideFlags: 0
@@ -92513,6 +92516,7 @@ MonoBehaviour:
   speed: 8
   idleDuration: 1
   anim: {fileID: 1466114552}
+  enemyScale: 2
 --- !u!4 &2007584056
 Transform:
   m_ObjectHideFlags: 0
@@ -94977,6 +94981,7 @@ MonoBehaviour:
   speed: 12
   idleDuration: 1
   anim: {fileID: 1968025233}
+  enemyScale: 2
 --- !u!4 &2143699747
 Transform:
   m_ObjectHideFlags: 0
