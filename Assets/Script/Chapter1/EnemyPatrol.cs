@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class EnemyPatrol : MonoBehaviour
 {
-    [Header ("Patrol Points")]
+    [Header("Patrol Points")]
     [SerializeField] private Transform leftEdge;
     [SerializeField] private Transform rightEdge;
 
@@ -21,6 +21,9 @@ public class EnemyPatrol : MonoBehaviour
     [Header("Enemy Animator")]
     [SerializeField] private Animator anim;
 
+    [Header("Enemy Scale")]
+    [SerializeField] private float enemyScale = 2.0f;
+
     private void Awake()
     {
         initScale = enemy.localScale;
@@ -38,7 +41,7 @@ public class EnemyPatrol : MonoBehaviour
             if (enemy.position.x >= leftEdge.position.x)
             {
                 MoveInDirection(-1);
-                enemy.localScale = new Vector3(2,2,2);
+                enemy.localScale = new Vector3(enemyScale, enemyScale, enemyScale);
             }
             else
                 DirectionChange();
@@ -48,7 +51,7 @@ public class EnemyPatrol : MonoBehaviour
             if (enemy.position.x <= rightEdge.position.x)
             {
                 MoveInDirection(1);
-                enemy.localScale = new Vector3(-2,2,2);
+                enemy.localScale = new Vector3(-enemyScale, enemyScale, enemyScale);
             }
             else
                 DirectionChange();
@@ -60,7 +63,7 @@ public class EnemyPatrol : MonoBehaviour
         anim.SetBool("moving", false);
         idleTimer += Time.deltaTime;
 
-        if(idleTimer > idleDuration)
+        if (idleTimer > idleDuration)
             movingLeft = !movingLeft;
     }
 
