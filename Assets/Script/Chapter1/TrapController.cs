@@ -34,6 +34,7 @@ public class TrapController : MonoBehaviour
                 //Attack
                 cooldownTimer = 0;
                 anim.SetTrigger("damage");
+                DamagePlayer();
             }
         }
     }

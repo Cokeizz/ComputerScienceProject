@@ -8,6 +8,7 @@ TagManager:
   - Softground
   - Bomb
   - Enemy
+  - Key
   layers:
   - Default
   - TransparentFX
