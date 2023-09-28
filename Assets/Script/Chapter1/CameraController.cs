@@ -15,6 +15,10 @@ public class CameraController : MonoBehaviour
     [SerializeField] private float cameraSpeed;
     [SerializeField] private float cameraVertical;
     [SerializeField] private float aboveDistance;
+
+    [Header("Check Point")]
+    [SerializeField] private Transform checkPoint = null;
+   
     private float lookAhead;
     private float lookDown;
     private string sceneName;
@@ -57,9 +61,10 @@ public class CameraController : MonoBehaviour
         {
             if (player.position.y <= 4.0f)
                 aboveDistance = 0.0f;
-
             if (player.position.y >= 4.00f)
                 aboveDistance = 4.0f;
+            if (player.position.y <= checkPoint.position.y)
+                aboveDistance = -6.0f;
         }
 
         if (sceneName == "Chapter3")
