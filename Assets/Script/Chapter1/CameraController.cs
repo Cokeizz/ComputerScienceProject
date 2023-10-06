@@ -60,6 +60,9 @@ public class CameraController : MonoBehaviour
 
             if (player.position.y >= 4.00f)
                 aboveDistance = 4.0f;
+
+            if (player.position.y <= -7.90f)
+                aboveDistance = -6.0f;
         }
 
         if (sceneName == "Chapter3")
