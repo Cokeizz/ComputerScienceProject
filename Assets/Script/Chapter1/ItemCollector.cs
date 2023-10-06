@@ -5,13 +5,7 @@ using UnityEngine;
 public class ItemCollector : MonoBehaviour
 {
 
-    private int coins = 0;
-  private void OnTriggerEnter2D(Collider2D collision) {
-    if (collision.gameObject.CompareTag("Coin"))
-    {
-        Destroy(collision.gameObject);
-        coins++;
-        Debug.Log(coins);
-    }
+    private void OnTriggerEnter2D(Collider2D collision) {
+    
   }
 }

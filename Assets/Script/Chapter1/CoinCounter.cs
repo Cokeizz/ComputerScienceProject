@@ -8,6 +8,7 @@ public class CoinCounter : MonoBehaviour
     public static CoinCounter instance;
     public TMP_Text coinText;
     public int currentCoin = 0;
+    [SerializeField]private AudioSource coinCollectSFX;
     // Start is called before the first frame update
     void Awake() {
         instance = this;
@@ -25,5 +26,6 @@ public class CoinCounter : MonoBehaviour
     }
     public void IncreaseCoins(){
         currentCoin += 1 ;
+        coinCollectSFX.Play();
     }
 }
