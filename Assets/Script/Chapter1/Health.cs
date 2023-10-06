@@ -4,6 +4,7 @@ public class Health : MonoBehaviour
 {
     private Rigidbody2D body;
     [SerializeField] private float startingHealth;
+    [SerializeField]private AudioSource hurtSFX;
     public float currentHealth { get; private set; }
     private Animator anim;
    
@@ -25,6 +26,7 @@ public class Health : MonoBehaviour
         {
             anim.SetTrigger("hurt");
            Debug.Log("hurt");
+           hurtSFX.Play();
         }
         else
         {

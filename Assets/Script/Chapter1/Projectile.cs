@@ -30,7 +30,7 @@ public class Projectile : MonoBehaviour
       //  boxCollider = GetComponent<BoxCollider2D>();
     }
     private void Update()
-    {
+    { 
         transform.localRotation = Quaternion.Euler(0, 0, 0);
         lifetime += Time.deltaTime;
         if (lifetime > bombTimer) 

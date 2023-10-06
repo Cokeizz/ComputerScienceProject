@@ -13,6 +13,7 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField]private float speed = 1.5f;
     [SerializeField]private float jump_range = 3.75f;
+    [SerializeField]private AudioSource jumpSFX;
 
 
     private void Awake() {
@@ -46,6 +47,7 @@ public class PlayerMovement : MonoBehaviour
       //Jump
         if((Input.GetKey(KeyCode.Space) && Grounded==true) || (XCI.GetButton(XboxButton.Y) && Grounded==true))
             Jump();
+            
        
         //Set animator parameter
         anim.SetBool("Run", horizontalInput != 0);
@@ -58,6 +60,7 @@ public class PlayerMovement : MonoBehaviour
         body.velocity = new Vector2(body.velocity.x,jump_range);
         anim.SetTrigger("Jump");
         Grounded = false; 
+        jumpSFX.Play();
       
     }
 
@@ -71,5 +74,5 @@ public class PlayerMovement : MonoBehaviour
         if(collision.gameObject.tag == "Ground")
         {
             Grounded = true;
-        }      
+        }        
 }}
