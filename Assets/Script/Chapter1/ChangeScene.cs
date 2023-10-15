@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class ChangeScene : MonoBehaviour
 {
+[SerializeField] private GameObject infoCard;
+
     public void MoveToScene(int sceneID)
     {
         SceneManager.LoadScene(sceneID);
@@ -14,5 +16,14 @@ public class ChangeScene : MonoBehaviour
     {
         Debug.Log("exitgame");
         Application.Quit();
+    }
+    public void infoClick()
+    {
+        Debug.Log("OnClick");
+        infoCard.SetActive(true);
+    }
+    public void infoClose()
+    {
+        infoCard.SetActive(false);
     }
 }

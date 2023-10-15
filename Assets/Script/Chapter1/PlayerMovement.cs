@@ -45,7 +45,7 @@ public class PlayerMovement : MonoBehaviour
             transform.localScale = new Vector3(-2,2,2);
             
       //Jump
-        if((Input.GetKey(KeyCode.Space) && Grounded==true) || (XCI.GetButton(XboxButton.Y) && Grounded==true))
+        if((Input.GetKey(KeyCode.Space) && Grounded==true) || (XCI.GetButton(XboxButton.Y) && Grounded==true) || (Input.GetKey(KeyCode.W) && Grounded==true))
             Jump();
             
        
