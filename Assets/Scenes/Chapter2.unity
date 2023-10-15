@@ -869,6 +869,7 @@ MonoBehaviour:
   playerHealth: {fileID: 1624417099}
   totalhealthBar: {fileID: 1852656050}
   currenthealthBar: {fileID: 821826667}
+  player: {fileID: 1624417095}
 --- !u!4 &107246556 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1306293520172023174, guid: 54ba3b80d7f0c1943a72ff80184e04e5, type: 3}
@@ -1924,6 +1925,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 287a343b0f5d742899d842c67a6a9c54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  infoCard: {fileID: 0}
 --- !u!114 &359363321
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21759,7 +21761,7 @@ Transform:
   m_GameObject: {fileID: 1624417091}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.4, y: -1.8, z: 0}
+  m_LocalPosition: {x: -7.4, y: -1.93, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 1
   m_Children:

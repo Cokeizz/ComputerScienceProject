@@ -716,6 +716,7 @@ MonoBehaviour:
   playerHealth: {fileID: 1624417099}
   totalhealthBar: {fileID: 1852656050}
   currenthealthBar: {fileID: 821826667}
+  player: {fileID: 1624417095}
 --- !u!1001 &98125625
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -38403,6 +38404,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 287a343b0f5d742899d842c67a6a9c54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  infoCard: {fileID: 0}
 --- !u!114 &377036265
 MonoBehaviour:
   m_ObjectHideFlags: 0
