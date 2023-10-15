@@ -3,27 +3,21 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags:
-  - Ground
-  - Softground
-  - Bomb
-  - Enemy
-  - Key
-  - Coin
+  tags: []
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Ground
+  - 
   - Water
   - UI
-  - Player
-  - Enemy
-  - SoftGround
-  - DecorateObject
-  - Bomb
-  - Coin
-  - Key
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
   - 
   - 
   - 
@@ -46,19 +40,4 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
-    locked: 0
-  - name: Background
-    uniqueID: 1217682799
-    locked: 0
-  - name: Midground
-    uniqueID: 3954982539
-    locked: 0
-  - name: Game
-    uniqueID: 539552493
-    locked: 0
-  - name: Ground
-    uniqueID: 905570165
-    locked: 0
-  - name: Foreground
-    uniqueID: 3414701283
     locked: 0
