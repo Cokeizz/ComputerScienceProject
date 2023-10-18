@@ -70,7 +70,11 @@ public class CameraController : MonoBehaviour
             transform.position = new Vector3(player.position.x + lookAhead, player.position.y + cameraVertical + lookDown, transform.position.z);
 
         }
+        if (sceneName == "Chapter4")
+        {
+            transform.position = new Vector3(player.position.x + lookAhead, player.position.y + cameraVertical + lookDown, transform.position.z);
 
+        }
 
     }
 
