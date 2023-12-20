@@ -58615,7 +58615,7 @@ Transform:
   m_GameObject: {fileID: 730292422}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 145.02, y: -11.51, z: 0}
+  m_LocalPosition: {x: 469.4, y: 2.57, z: 0}
   m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -64937,6 +64937,7 @@ GameObject:
   - component: {fileID: 1085480460}
   - component: {fileID: 1085480464}
   - component: {fileID: 1085480465}
+  - component: {fileID: 1085480466}
   m_Layer: 9
   m_Name: Door
   m_TagString: Untagged
@@ -65095,6 +65096,19 @@ MonoBehaviour:
   objectLayer:
     serializedVersion: 2
     m_Bits: 4096
+--- !u!114 &1085480466
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1085480457}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e68f7383d2f44b4bb822cd791d7ffc9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneNum: 2
 --- !u!1 &1095521337
 GameObject:
   m_ObjectHideFlags: 0
@@ -87437,7 +87451,7 @@ Transform:
   m_GameObject: {fileID: 1624417091}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.12, y: -2.75, z: 0}
+  m_LocalPosition: {x: 465.7, y: 3, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -88410,6 +88424,7 @@ GameObject:
   - component: {fileID: 1672519503}
   - component: {fileID: 1672519505}
   - component: {fileID: 1672519506}
+  - component: {fileID: 1672519507}
   m_Layer: 5
   m_Name: CoinCurrent
   m_TagString: Untagged
@@ -88644,6 +88659,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1672519507
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1672519501}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 063f50c342164064ea1c4bd6b8d033ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1673759928
 GameObject:
   m_ObjectHideFlags: 0

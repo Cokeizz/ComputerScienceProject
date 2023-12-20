@@ -7,7 +7,7 @@ public class CoinCounter : MonoBehaviour
 {
     public static CoinCounter instance;
     public TMP_Text coinText;
-    public int currentCoin = 0;
+    public int currentCoin;
     [SerializeField]private AudioSource coinCollectSFX;
     // Start is called before the first frame update
     void Awake() {
