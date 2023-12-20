@@ -4,27 +4,31 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
 using System.Text;
+using TMPro;
+
 
 public class CoinHandler : MonoBehaviour
 {
+    [SerializeField] TMP_Text coinText;
+    private String cointxt;
+    private int updateCoin;
     // Start is called before the first frame update
     void Start()
     {
-       
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-
+       ReadCoin();
+       coinText.text = cointxt + "X" ;
     }
 
     public void WriteCoin(){
+        this.updateCoin = CoinCounter.instance.UpdateCoin() + int.Parse(cointxt);
+
+
     try
         {
             string filePath = Path.Combine(Application.dataPath, "Script/Coin.txt");
             StreamWriter sw = new StreamWriter(filePath);
-            sw.WriteLine("Hello World!!xxxxxxxyyyyyxxx");
+            sw.WriteLine(this.updateCoin);
             sw.Close();
         }
         catch (Exception e)
@@ -46,6 +50,7 @@ public class CoinHandler : MonoBehaviour
                 string filePath = Path.Combine(Application.dataPath, "Script/Coin.txt");
                 StreamReader sr = new StreamReader(filePath);
                 line = sr.ReadLine();
+                cointxt = line;
                 Debug.Log(line); 
                 //close the file
                 sr.Close();

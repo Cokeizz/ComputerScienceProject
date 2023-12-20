@@ -389,8 +389,11 @@ GameObject:
   - component: {fileID: 39345402}
   - component: {fileID: 39345401}
   - component: {fileID: 39345404}
+  - component: {fileID: 39345405}
+  - component: {fileID: 39345407}
+  - component: {fileID: 39345406}
   m_Layer: 0
-  m_Name: Castle (1)
+  m_Name: 'Castle '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -406,7 +409,7 @@ Animator:
   m_GameObject: {fileID: 39345400}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 170b75701fdfa3a44838c9b6737d288f, type: 2}
+  m_Controller: {fileID: 9100000, guid: f27bc737e23fa0a44ac8f3c751c891fd, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -458,7 +461,7 @@ SpriteRenderer:
   m_SortingLayerID: -339984757
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: ab86d934c3244bd428983777982fed06, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 790a46b4f3e67674bb968d96e9e842d9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -466,7 +469,7 @@ SpriteRenderer:
   m_Size: {x: 19.2, y: 10.8}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &39345403
@@ -529,6 +532,50 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 17.587488, y: 3.7104487}
   m_EdgeRadius: 0
+--- !u!114 &39345405
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 39345400}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6422cd0ed4ef5844088cae196134c871, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  range: 1
+  colliderDistance: 0
+  boxCollider: {fileID: 39345404}
+  objectLayer:
+    serializedVersion: 2
+    m_Bits: 64
+--- !u!114 &39345406
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 39345400}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 063f50c342164064ea1c4bd6b8d033ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coinText: {fileID: 0}
+--- !u!114 &39345407
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 39345400}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e68f7383d2f44b4bb822cd791d7ffc9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneNum: 3
 --- !u!4 &39741933 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1306293520172023174, guid: 54ba3b80d7f0c1943a72ff80184e04e5, type: 3}
@@ -21943,7 +21990,7 @@ Transform:
   m_GameObject: {fileID: 1624417091}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.4, y: -1.93, z: 0}
+  m_LocalPosition: {x: 203.9, y: -1.93, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 1
   m_Children:
