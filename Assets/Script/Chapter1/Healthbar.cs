@@ -8,6 +8,8 @@ public class Healthbar : MonoBehaviour
     [SerializeField] private Image totalhealthBar;
     [SerializeField] private Image currenthealthBar;
     [SerializeField] private Transform player;
+    [SerializeField] private GameObject GameOverUI;
+    [SerializeField] private GameObject playerObject;
 
     private void Start()
     {
@@ -19,13 +21,19 @@ public class Healthbar : MonoBehaviour
         
         if(currenthealthBar.fillAmount <= 0)
         {
+            
+            GameOverUI.SetActive(true);
             Debug.Log("Player Die");
-            SceneManager.LoadScene(5);
+            playerObject.SetActive(false);
+            
         }
 
         if(player.position.y <= -20.0f)
         {
-            SceneManager.LoadScene(5);
+           
+            GameOverUI.SetActive(true);
+            playerObject.SetActive(false);
+            
         }
     }
 }
