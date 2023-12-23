@@ -2155,9 +2155,10 @@ GameObject:
   - component: {fileID: 171523459}
   - component: {fileID: 171523458}
   - component: {fileID: 171523457}
-  m_Layer: 0
+  - component: {fileID: 171523461}
+  m_Layer: 10
   m_Name: Bomb2
-  m_TagString: Untagged
+  m_TagString: Bomb
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2171,7 +2172,7 @@ Transform:
   m_GameObject: {fileID: 171523455}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -24.002, y: -3.862, z: 9.914889}
+  m_LocalPosition: {x: -24.37, y: -3.96, z: 9.914889}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -2230,7 +2231,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.11651993, y: 0.010923624}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -2241,7 +2242,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2, y: 2}
+  m_Size: {x: 1.7669601, y: 1.366426}
   m_EdgeRadius: 0
 --- !u!50 &171523459
 Rigidbody2D:
@@ -2322,6 +2323,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &171523461
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 171523455}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8951449369a67a54da91cfe2337b785d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bombTimer: 2
+  attackCooldown: 1
+  damage: 1
+  range: 2
+  colliderDistance: 0
+  boxCollider: {fileID: 171523458}
+  objectLayer:
+    serializedVersion: 2
+    m_Bits: 704
 --- !u!1001 &191229937
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3745,7 +3767,7 @@ GameObject:
   - component: {fileID: 278663053}
   m_Layer: 10
   m_Name: Bomb1
-  m_TagString: Untagged
+  m_TagString: Bomb
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -87909,7 +87931,10 @@ MonoBehaviour:
   attackCooldown: 6
   bombPoint: {fileID: 1179666356}
   bombs:
+  - {fileID: 1169685469}
   - {fileID: 278663047}
+  - {fileID: 171523455}
+  - {fileID: 1824528220}
   throwBombSFX: {fileID: 1624417102}
   onBombSFX: {fileID: 1624417103}
 --- !u!114 &1624417099
@@ -91806,9 +91831,10 @@ GameObject:
   - component: {fileID: 1824528224}
   - component: {fileID: 1824528223}
   - component: {fileID: 1824528222}
-  m_Layer: 0
+  - component: {fileID: 1824528226}
+  m_Layer: 10
   m_Name: Bomb3
-  m_TagString: Untagged
+  m_TagString: Bomb
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -91908,7 +91934,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.08010864, y: -0.16021442}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -91919,7 +91945,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2, y: 2}
+  m_Size: {x: 1.8397827, y: 1.1989288}
   m_EdgeRadius: 0
 --- !u!212 &1824528225
 SpriteRenderer:
@@ -91973,6 +91999,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1824528226
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1824528220}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8951449369a67a54da91cfe2337b785d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bombTimer: 2
+  attackCooldown: 1
+  damage: 1
+  range: 2
+  colliderDistance: 0
+  boxCollider: {fileID: 1824528224}
+  objectLayer:
+    serializedVersion: 2
+    m_Bits: 704
 --- !u!1 &1825443637
 GameObject:
   m_ObjectHideFlags: 0

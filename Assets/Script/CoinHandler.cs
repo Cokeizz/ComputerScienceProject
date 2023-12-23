@@ -19,6 +19,9 @@ public class CoinHandler : MonoBehaviour
        ReadCoin();
        coinText.text = cointxt + "X" ;
     }
+     void Update()
+    {
+    }
 
     public void WriteCoin(){
         this.updateCoin = CoinCounter.instance.UpdateCoin() + int.Parse(cointxt);

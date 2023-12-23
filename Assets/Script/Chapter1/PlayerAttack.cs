@@ -1,5 +1,11 @@
-using UnityEngine;
 using XboxCtrlrInput;
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using System.IO;
+using System.Text;
+using TMPro;
 public class PlayerAttack : MonoBehaviour
 {
     [SerializeField] private float attackCooldown;
@@ -11,12 +17,13 @@ public class PlayerAttack : MonoBehaviour
     private Animator anim;
     private PlayerMovement playerMovement;
     private float cooldownTimer = Mathf.Infinity;
-    private bool[] bombs_status = {false,false,false};
+    private String CurrentBomb;
 
     private void Awake()
     {
         anim = GetComponent<Animator>();
         playerMovement = GetComponent<PlayerMovement>();
+        ReadCurrentBomb();
     }
 
     private void Update()
@@ -29,10 +36,32 @@ public class PlayerAttack : MonoBehaviour
     private void Attack()
     {
         cooldownTimer = 3;
-        bombs[0].transform.position = bombPoint.position;
-        bombs[0].GetComponent<Projectile>().SetDirection(Mathf.Sign(transform.localScale.x));
+        bombs[int.Parse(CurrentBomb)].transform.position = bombPoint.position;
+        bombs[int.Parse(CurrentBomb)].GetComponent<Projectile>().SetDirection(Mathf.Sign(transform.localScale.x));
         throwBombSFX.Play();
         onBombSFX.Play();
+    }
+
+     public void ReadCurrentBomb(){
+        String line;
+            try
+            {
+                string filePath = Path.Combine(Application.dataPath, "Script/CurrentBomb.txt");
+                StreamReader sr = new StreamReader(filePath);
+                line = sr.ReadLine();
+                CurrentBomb = line;
+                //close the file
+                sr.Close();
+
+            }
+            catch(Exception e)
+            {
+                Debug.Log("Exception: " + e.Message);
+            }
+            finally
+            {
+                Debug.Log("Executing finally block.");
+            }
     }
    
 }
