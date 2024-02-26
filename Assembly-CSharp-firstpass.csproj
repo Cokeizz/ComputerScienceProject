@@ -62,7 +62,6 @@
   <ItemGroup>
     <None Include="Assets\Plugins\XInputDotNetPure.dll" />
     <None Include="Assets\Plugins\x86_64\XInputInterface.dll" />
-    <None Include="Assets\Plugins\x86\XInputInterface.dll" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
