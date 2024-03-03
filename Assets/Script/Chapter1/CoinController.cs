@@ -46,7 +46,6 @@ public class CoinController : MonoBehaviour
             if(PlayerInsight())
             {
                 gameObject.SetActive(false);
-                Debug.Log("+1 coin"); 
                 CoinCounter.instance.IncreaseCoins();
             }
     }

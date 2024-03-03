@@ -27,6 +27,7 @@ public class CoinCounter : MonoBehaviour
     public void IncreaseCoins(){
         currentCoin += 1 ;
         coinCollectSFX.Play();
+        Debug.Log("1 {coin}");
     }
     public int UpdateCoin(){
         return currentCoin;

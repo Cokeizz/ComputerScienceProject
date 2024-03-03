@@ -10,7 +10,7 @@ using TMPro;
 public class CoinHandler : MonoBehaviour
 {
     [SerializeField] TMP_Text coinText;
-    private String cointxt;
+    private String cointxt ="10000";
     private int updateCoin;
     // Start is called before the first frame update
     void Start()

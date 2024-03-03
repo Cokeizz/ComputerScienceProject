@@ -25,13 +25,13 @@ public class Health : MonoBehaviour
         if (currentHealth > 0)
         {
             anim.SetTrigger("hurt");
-           Debug.Log("hurt");
+           Debug.Log("-1 {hurt}");
            hurtSFX.Play();
         }
         else
         {
            anim.SetTrigger("die");
-           Debug.Log("die");
+           Debug.Log("-1 {die}");
            
         }
     }

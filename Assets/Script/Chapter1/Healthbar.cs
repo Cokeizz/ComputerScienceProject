@@ -23,7 +23,7 @@ public class Healthbar : MonoBehaviour
         {
             
             GameOverUI.SetActive(true);
-            Debug.Log("Player Die");
+            Debug.Log("-1 {die}");
             playerObject.SetActive(false);
             
         }
@@ -33,6 +33,7 @@ public class Healthbar : MonoBehaviour
            
             GameOverUI.SetActive(true);
             playerObject.SetActive(false);
+           Debug.Log("-1 {die}");
             
         }
     }
