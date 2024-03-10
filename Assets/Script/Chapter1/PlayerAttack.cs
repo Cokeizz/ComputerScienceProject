@@ -28,6 +28,7 @@ public class PlayerAttack : MonoBehaviour
 
     private void Update()
     {
+        ReadCurrentBomb();
         if ((Input.GetKey(KeyCode.X) || XCI.GetButton(XboxButton.A)) && cooldownTimer > attackCooldown )
             Attack();
              cooldownTimer += Time.deltaTime;
@@ -43,25 +44,7 @@ public class PlayerAttack : MonoBehaviour
     }
 
      public void ReadCurrentBomb(){
-        String line;
-            try
-            {
-                string filePath = Path.Combine(Application.dataPath, "Script/CurrentBomb.txt");
-                StreamReader sr = new StreamReader(filePath);
-                line = sr.ReadLine();
-                CurrentBomb = line;
-                //close the file
-                sr.Close();
-
-            }
-            catch(Exception e)
-            {
-                Debug.Log("Exception: " + e.Message);
-            }
-            finally
-            {
-                Debug.Log("Executing finally block.");
-            }
+        this.CurrentBomb = GlobalVariable.gCurrentBomb;       
     }
    
 }

@@ -43,68 +43,14 @@ public class CurrentBombHandler : MonoBehaviour
 
 
     public void ReadCurrentBomb(){
-        String line;
-            try
-            {
-                string filePath = Path.Combine(Application.dataPath, "Script/CurrentBomb.txt");
-                StreamReader sr = new StreamReader(filePath);
-                line = sr.ReadLine();
-                this.currentBomb = line;
-                Debug.Log(line); 
-                //close the file
-                sr.Close();
-
-            }
-            catch(Exception e)
-            {
-                Debug.Log("Exception: " + e.Message);
-            }
-            finally
-            {
-                Debug.Log("Executing finally block.");
-            }
+                this.currentBomb = GlobalVariable.gCurrentBomb;       
     }
 
     public void WriteCurrentBomb(){
-    try
-        {
-            string filePath = Path.Combine(Application.dataPath, "Script/CurrentBomb.txt");
-            StreamWriter sw = new StreamWriter(filePath);
-            sw.WriteLine(this.currentBomb);
-            sw.Close();
-        }
-        catch (Exception e)
-        {
-
-            Debug.Log("Exception: " + e.Message);
-        }
-        finally
-        {
-
-            Debug.Log("Executing finally block.");
-        }
+        GlobalVariable.gCurrentBomb = bombIndex;
     }
 
      public void ReadHasBomb(){
-        String line;
-            try
-            {
-                string filePath = Path.Combine(Application.dataPath, "Script/hasBomb.txt");
-                StreamReader sr = new StreamReader(filePath);
-                line = sr.ReadLine();
-                this.hasBomb = line;
-                Debug.Log(line); 
-                //close the file
-                sr.Close();
-
-            }
-            catch(Exception e)
-            {
-                Debug.Log("Exception: " + e.Message);
-            }
-            finally
-            {
-                Debug.Log("Executing finally block.");
-            }
+        this.hasBomb = "111";
     }
 }
