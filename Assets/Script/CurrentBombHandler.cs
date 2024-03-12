@@ -51,6 +51,6 @@ public class CurrentBombHandler : MonoBehaviour
     }
 
      public void ReadHasBomb(){
-        this.hasBomb = "111";
+        this.hasBomb = "1111";
     }
 }
